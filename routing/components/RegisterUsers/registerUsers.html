@@ -1,0 +1,58 @@
+<head>
+        <link rel="stylesheet" type="text/css" href="components\RegisterUsers\regStyle.css">
+</head>
+
+<div ng-init="registerUsersCtrl.initilaize()">
+    <h1>POPULAR POINT OF INTREST</h1>
+    <table>
+        <tr>
+            <td ng-repeat="poi in registerUsersCtrl.popularPois">
+                <table>
+                    <tr>
+                        <td ng-click="registerUsersCtrl.goToPoiDetails(poi.id)">{{poi.name}}</td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <img src={{poi.picture}} ng-click="registerUsersCtrl.goToPoiDetails(poi.id)" width="150" height="150">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<br>
+<hr>
+
+<div ng-show="registerUsersCtrl.haveLastPois">
+    <h1>LAST SAVED POINT OF INTREST</h1>
+    <table>
+        <tr>
+            <td ng-repeat="poi in registerUsersCtrl.lastPois">
+                <table>
+                    <tr>
+                        <td ng-click="registerUsersCtrl.goToPoiDetails(poi.id)">{{poi.name}}</td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td>
+                            <img src={{poi.picture}} ng-click="registerUsersCtrl.goToPoiDetails(poi.id)" width="150" height="150">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="empty" ng-show="!registerUsersCtrl.haveLastPois">Your Favorit Point Of Interste List Is Empty</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

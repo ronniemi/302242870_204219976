@@ -1,0 +1,206 @@
+
+.maps {
+    height: 300px;
+    width: 400px;
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: url(http://backgroundcheckall.com/wp-content/uploads/2017/12/toronto-background-11.jpg) fixed 50% 50%;
+    background-size: cover;
+
+}
+
+
+header {
+    width: 100%;
+    height: 0px;
+}
+
+body {
+    font-family:Century Gothic;
+    font-weight: lighter;
+    
+
+}
+
+button{
+    background-color:#87618f;
+    color: white;
+    padding: 14px 20px;
+    margin: 0px 4px;
+    border: none;
+    cursor: pointer;
+	font-size: 16px;
+	font-family:Century Gothic;
+    font-weight: lighter;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color:#ad88a7;
+}
+
+.poiClick{
+    cursor: pointer;
+}
+
+.logo {
+    line-height: 60px;
+    position: fixed;
+    float: left;
+    margin: 0px 2px;
+    color: #fff;
+   
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    line-height: 60px;
+    z-index:101;
+}
+
+#hello{
+    line-height: 18px;
+    float: left;
+    margin: 19px 270px;
+}
+
+nav ul {
+    line-height: 30px;
+    list-style: none;
+    background: #9595b7;
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    transition: 1s;
+   
+}
+
+nav.black{
+    background: #000;
+    opacity: .83;
+   
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 13px 42px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+nav ul li:hover {
+    background-color:#87618f;
+}
+
+#content{
+    background-color:rgba(255, 255, 255, 0.85);
+    margin:0px 70px 20px ;
+    padding-top: 80px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 7px;
+
+}
+
+
+/* Footer */
+
+#footer .copyright {
+    color: #bbb;
+    font-size: 0.9rem;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    text-align: center;
+}
+
+footer ul{
+list-style: none;
+text-align: center;
+}
+
+.align-center {
+        text-align: center;
+        font-weight: normal;
+    }
+
+@media screen and (max-width: 736px) {
+
+    #footer {
+        padding: 3rem 0 1rem 0 ;
+    }
+
+}
+
+
+
+/* Style all font awesome icons */
+.fa {
+	padding: 20px;
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+
+ul.icons {
+	cursor: default;
+	list-style: none;
+	padding-left: 0;
+}
+
+	ul.icons li {
+		display: inline-block;
+		padding: 0 1rem 0 0;
+	}
+
+		ul.icons li:last-child {
+			padding-right: 0;
+		}
+
+		ul.icons li .icon:before {
+			font-size: 2rem;
+		}
+		

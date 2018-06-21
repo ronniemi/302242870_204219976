@@ -1,0 +1,101 @@
+<html ng-app="myApp">
+
+<head>
+    <title>Tourism Toronto</title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <!--for map-->
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <!--for map-->
+  
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png"
+    href="/assets/Toronto.png" />
+
+</head>
+
+<body ng-controller="myAppCtrl as appCtrl" ng-init="appCtrl.initilize()">
+<header>
+
+
+    <nav>
+
+        <div class="logo">
+            <img src="/assets/Tourism-Toronto.png" width=260 height=70></img>
+         
+        </div>
+     
+        <div class="menu">
+
+               
+            <ul>
+                    <span id="hello">Hello {{appCtrl.username}}</span>
+                <li ng-show="appCtrl.username == 'guest'">
+                    <a href="#/">Home</a>
+                </li>
+                <li ng-show="appCtrl.username != 'guest'">
+                    <a href="#/registerUsers">Home</a>
+                </li>
+                <li ng-show="appCtrl.username == 'guest'">
+                    <a href="#/register">Register</a>
+                </li>
+                <li>
+                    <a href="#/about">About</a>
+                </li>
+                <li>
+                    <a href="#/poi/all">Explore</a>
+                </li>
+                <li ng-show="appCtrl.admin">
+                        <a href="#/admin">admin</a>
+                </li>
+            
+            </ul>
+
+        </div>
+    </nav>
+</header>
+
+<section id="content">
+    <div ng-view onload="appCtrl.cheackToken()"></div>
+</section>
+
+<footer id="footer" class="wrapper">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="https://twitter.com/torontocomms" class="fa fa-twitter"></a></li>
+                <li><a href="https://www.facebook.com/Toronto.Ontario.Canada/" class="fa fa-facebook"></a></li>
+                <li><a href="https://www.instagram.com/toronto_insta/" class="fa fa-instagram"></a></li>
+                <li><a href="https://www.google.co.il/search?ei=tREqW7XXCciKmwXU67jQBA&q=toronto&oq=toronto&gs_l=psy-ab.3..0i67k1j0l2j0i67k1j0l3j0i67k1j0l2.2380.2380.0.2594.1.1.0.0.0.0.155.155.0j1.1.0....0...1c.1.64.psy-ab..0.1.155....0.zVlhlcbwfMw" class="fa fa-google"></a></li>
+            </ul>
+            <div class="copyright">
+                &copy; Ronnie Mindlin Miller & Maya Kremer. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="myApp.js"></script>
+    <script src="myAppCtrl.js"></script>
+    <script src="components/Register/registerCtrl.js"></script>
+    <script src="components/RegisterUsers/registerUsersCtrl.js"></script>
+    <script src="components/HomePage/homeCtrl.js"></script>
+    <script src="components/RetrivePassword/retrivePasswordCtrl.js"></script>
+    <script src="components/About/aboutCtrl.js"></script>
+    <script src="components/Poi/poiCtrl.js"></script>
+    <script src="components/PoiDetails/poiDetailsCtrl.js"></script>
+    <script src="components/AdminManage/adminCtrl.js"></script>
+    <script src="components/Services/myLocalStorage.js"></script>
+    <script src="components/Services/setHeadersToken.js"></script>
+    <script src="components/Services/autenticateToken.js"></script>
+    <script src="components/Services/myQuestions.js"></script>
+    <script src="components/Services/favoritPoisManage.js"></script>
+
+    <!--for charts-->
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+    <!--for token ./build/jwt-decode.min.js--> 
+    <script src="node_modules/angular-jwt/dist/angular-jwt.min.js"></script>
+</body>
+
+</html>

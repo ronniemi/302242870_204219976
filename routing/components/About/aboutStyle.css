@@ -1,0 +1,115 @@
+p{
+    text-align: center;
+    line-height: 1.6;
+}
+
+hr {
+    width: 50%;
+}
+
+h1{
+    text-align: center;
+}
+
+#im1{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+button
+{
+    margin:auto;
+  display:block;
+}
+
+
+#slider,
+.wrap,
+.slide-content {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 80vh;
+  overflow-x: hidden;
+}
+
+.wrap {
+  position: relative;
+}
+
+.slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.slide1 {
+  background-image: url("../../assets/Toronto.jpg");
+  background-position: center;
+}
+.slide2 {
+  background-image: url("../../assets/toronto2.jpg");
+  background-position: center;
+}
+
+.slide3{
+    background-image: url("../../assets/toronto3.jpg");
+    background-position: center;
+  }
+
+  .slide4 {
+    background-image: url("../../assets/toronto4.jpg");
+    background-position: center;
+  }
+
+  .slide5{
+    background-image: url("../../assets/toronto5.jpg");
+    background-position: center;
+  }
+
+  .slide6{
+    background-image: url("../../assets/toronto6.jpg");
+    background-position: center;
+  }
+
+ 
+
+
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slide-content span {
+  font-size: 5rem;
+  color: #fff;
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+#arrow-left {
+  border-width: 30px 40px 30px 0;
+  border-color: transparent #fff transparent transparent;
+  left: 0;
+  margin-left: 30px;
+}
+
+#arrow-right {
+  border-width: 30px 0 30px 40px;
+  border-color: transparent transparent transparent #fff;
+  right: 0;
+  margin-right: 30px;
+}

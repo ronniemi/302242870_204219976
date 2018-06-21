@@ -1,0 +1,20 @@
+hr {
+    width: 70%;
+}
+
+h1{
+    text-align: center;
+}
+table{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+td{
+    padding: 0px 20px;
+}
+
+#empty{
+    text-align: center;
+
+}

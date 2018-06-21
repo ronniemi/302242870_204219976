@@ -1,0 +1,62 @@
+<head>
+       <link rel="stylesheet" type="text/css" href="components\HomePage\homeStyle.css">
+</head>
+<div id="home">
+<h1>Login</h1>
+<form ng-submit="homeCtrl.login()" name="loginForm" ng-init="homeCtrl.initilize()">
+    <p>Username:
+        <input type="text" name="username" ng-model="homeCtrl.user.username" placeholder="enter username" required minlength="8" maxlength="8" ng-pattern="/^[a-zA-Z]*$/">
+        <span ng-show="loginForm.username.$touched && loginForm.username.$error.required">
+                This is a required field
+        </span>
+        <span ng-show="loginForm.username.$error.minlength || loginForm.username.$error.maxlength || loginForm.username.$error.pattern">
+                invalid username
+        </span>
+    </p>
+
+    <p>Password:
+        <input type="password" name="password" ng-model="homeCtrl.user.password" placeholder="enter password" required minlength="10" maxlength="10" ng-pattern="/^[a-zA-Z0-9]*$/">
+        <span ng-show="loginForm.password.$touched && loginForm.password.$error.required">
+                This is a required field
+        </span>
+        <span ng-show="loginForm.password.$error.minlength || loginForm.password.$error.maxlength || loginForm.password.$error.pattern">
+                invalid password
+        </span>
+    </p>
+
+    <button type="submit" id="login"  ng-disabled="!loginForm.$valid " >Login</button>
+</form>
+
+<div>
+        <button ng-show="{{!homeCtrl.connectd}}" type="button" ng-attr-title="sign up to us!" name="registerButton" ng-click="homeCtrl.goToRegisration()" class="click">Sign Up</button>
+        <button type="button" name="retrivePassButton" ng-click="homeCtrl.retrivePassword()" class="click">Forgat Password</button>
+</div>
+
+<br>
+<br>
+
+<div><h1>Explore Toronto</h1>
+        <table>
+                <tr>
+                        <td ng-repeat="poi in homeCtrl.randomPoi">
+                                <table>
+                                        <tr>
+                                                <td ng-click="homeCtrl.goToPoiDetails(poi.location.id)" class="click">{{poi.location.name}}</td>
+                                        </tr>
+                                        <tr>
+                                                <td><img src={{poi.location.picture}} ng-click="homeCtrl.goToPoiDetails(poi.location.id)"  class="click" width="200" height="150"></td>
+                                        </tr>
+                                </table>
+                        </td>
+                </tr>
+        </table>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

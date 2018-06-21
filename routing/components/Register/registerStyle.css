@@ -1,0 +1,35 @@
+form {
+
+	width: 30%;
+
+}
+
+input{
+    width: 100%;
+    padding: 6px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	border-radius: 8px;
+}
+
+select{
+    width: 100%;
+    padding: 6px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+#reg{
+    padding: 0px 30px;
+}
+
+button:disabled {
+    background-color:#747679;
+    cursor: not-allowed;
+
+}

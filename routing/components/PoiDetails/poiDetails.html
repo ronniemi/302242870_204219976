@@ -1,0 +1,60 @@
+<head>
+        <link rel="stylesheet" type="text/css" href="components\PoiDetails\poiDetStyle.css">
+</head>
+<p>{{poiDetailsCtrl.message}}</p>
+<div ng-init="poiDetailsCtrl.initilaize()">
+    <span>
+            <h1>{{poiDetailsCtrl.poi.locationObject[0].name}}</h1>
+        <table>
+           
+            <tr>
+        
+                <td ng-show="poiDetailsCtrl.connected && poiDetailsCtrl.isFavorit(poiDetailsCtrl.poi.locationObject[0].id)"><img src={{poiDetailsCtrl.goldStarImgUrl}} width="30" height="30" ng-click="poiDetailsCtrl.addRemoveFavorit(poiDetailsCtrl.poi.locationObject[0].id)"></td>
+                <td ng-show="poiDetailsCtrl.connected && !poiDetailsCtrl.isFavorit(poiDetailsCtrl.poi.locationObject[0].id)"><img src={{poiDetailsCtrl.blackStarImgUrl}} width="30" height="30" ng-click="poiDetailsCtrl.addRemoveFavorit(poiDetailsCtrl.poi.locationObject[0].id)"></td>
+            </tr>
+            <tr>
+                <td>Description: {{poiDetailsCtrl.poi.locationObject[0].description}}</td>
+            </tr>
+            <tr>
+                <td>Rate: {{poiDetailsCtrl.poi.locationObject[0].rate * 20 | number : 2}}%</td>
+            </tr>
+            <tr>
+                <td>Number of people rate this location: {{poiDetailsCtrl.poi.locationObject[0].rateCounter}}</td>
+            </tr>
+            <tr>
+                <td>Category: {{poiDetailsCtrl.poi.locationObject[0].category}}</td>
+            </tr>
+            <tr>
+                <td>Number of people intrested in this location: {{poiDetailsCtrl.poi.locationObject[0].numberOfViewers}}</td>
+            </tr>   
+        
+        </table>
+       
+    </span>
+    <br>
+    <img src={{poiDetailsCtrl.poi.locationObject[0].picture}} width="450" height="200">
+    <span>
+    <br>
+    </span>
+    <span> 
+        <table>
+            <tr>
+                <th>Review</th>
+                <th>Username</th>
+                <th>Date</th>
+            </tr>
+            <tr ng-repeat="review in poiDetailsCtrl.poi.reviews">
+                <td>{{review.review}}</td>
+                <td>{{review.username}}</td>
+                <td ng-bind="review.reviewDate | date:'dd/MM/yyyy'"></td>
+            </tr>
+        </table>
+    </span>
+</div>
+<br>
+ <!--maps divs-->
+
+ <div ng-show="poiDetailsCtrl.poiId" id="map" class="maps"></div>
+
+<br>
+

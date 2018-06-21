@@ -1,0 +1,109 @@
+<head>
+                <link rel="stylesheet" type="text/css" href="components\Register\registerStyle.css">
+        </head>
+<div id="reg">
+<h1>Register</h1>
+<form ng-submit="registerCtrl.submit()" name='myForm' ng-init="registerCtrl.initFileds()">
+
+        <p>first name: 
+                <input type="text" name='firstname' ng-model="registerCtrl.user.firstName" required ng-minlength="2">
+                <span ng-show="myForm.firstname.$touched && myForm.firstname.$error.required">
+                        This is a required field
+                </span>
+                <span ng-show="myForm.firstname.$error.minlength">
+                        Minimun first name length required is 2
+                </span>
+        </p>
+
+        <p>last name: 
+                <input type="text" name='lastname' ng-model="registerCtrl.user.lastName" required ng-minlength="2">
+                <span ng-show="myForm.lastname.$touched && myForm.lastname.$error.required">
+                        This is a required field
+                </span>
+                <span ng-show="myForm.lastname.$error.minlength">
+                        Minimun last name length required is 2
+                </span>
+        </p>
+
+        <p>city: 
+                <input type="text" name='city' ng-model="registerCtrl.user.city" required ng-minlength="2">
+                <span ng-show="myForm.city.$touched && myForm.city.$error.required">
+                        This is a required field
+                </span>
+                <span ng-show="myForm.city.$error.minlength">
+                        Minimun city length required is 2
+                </span>
+        </p>
+
+        <p>county:
+                <select name="country" ng-options="country.Name[0] as country.Name for country in registerCtrl.countries" ng-model="registerCtrl.user.country" required></select>
+                <span ng-show="myForm.country.$touched && myForm.country.$error.required">
+                        This is a required field
+                </span>
+        </p>
+
+        <p>email: 
+                <input type="email" name='email' ng-model="registerCtrl.user.email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required>
+                <span ng-show="myForm.email.$touched && myForm.email.$error.required">
+                        This is a required field
+                </span>
+                <span ng-show="myForm.email.$touched && myForm.email.$error.pattern">
+                        email enterd is invalid
+                </span>
+        </p>
+
+        <p>category 1:
+                <select name="category1" ng-options="x.category as x.category for x in registerCtrl.categories" ng-model="registerCtrl.user.category1" required></select>
+                <span ng-show="myForm.category1.$touched && myForm.category1.$error.required">
+                        This is a required field
+                </span>
+        </p>
+
+        <p ng-hide="myForm.category1.$error.required">category 2:
+                <select name="category2" ng-options="x.category as x.category for x in registerCtrl.categories | filter : '!'+registerCtrl.user.category1" ng-model="registerCtrl.user.category2" required></select>
+                <span ng-show="myForm.category2.$touched && myForm.category2.$error.required">
+                        This is a required field
+                </span>
+        </p>
+
+        <p ng-hide="myForm.category2.$error.required">category 3:
+                <select name="category3" ng-options="x.category as x.category for x in registerCtrl.categories | filter : '!'+registerCtrl.user.category1 | filter : '!'+registerCtrl.user.category2" ng-model="registerCtrl.user.category3"></select>
+        </p>
+
+        <p ng-hide="myForm.category3.$pristine">category 4:
+                <select name="category4" ng-options="x.category as x.category for x in registerCtrl.categories | filter : '!'+registerCtrl.user.category1 | filter : '!'+registerCtrl.user.category2 | filter : '!'+registerCtrl.user.category3" ng-model="registerCtrl.user.category4"></select>
+        </p>
+
+        <p>Question 1: 
+                <span ng-bind="registerCtrl.questions[0]" ng-model="registerCtrl.user.verificationQues1"> </span>
+        </p>
+
+        <p>Ansewr:
+                <input type="text" name='answer1' ng-model="registerCtrl.user.verificationAns1" required ng-minlength="2">
+                <span ng-show="myForm.answer1.$touched && myForm.answer1.$error.required">
+                        This is a required field
+                </span>
+                <span ng-show="myForm.answer1.$error.minlength">
+                        Minimun answer length required is 2
+                </span>
+        </p>
+
+        <p>Question 2:
+                <span> {{registerCtrl.questions[1]}} </span>
+        </p>
+
+        <p>Ansewr:
+                <input type="text" name='answer2' ng-model="registerCtrl.user.verificationAns2" required ng-minlength="2">
+                <span ng-show="myForm.answer2.$touched && myForm.answer2.$error.required">
+                        This is a required field
+                </span>
+                <span ng-show="myForm.answer2.$error.minlength">
+                        Minimun answer length required is 2
+                </span>
+        </p>
+
+        <button type="submit" id="submit" ng-disabled="!myForm.$valid ">Register</button>
+
+</form>
+
+</div>
