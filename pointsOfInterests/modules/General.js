@@ -149,11 +149,9 @@ function updateNumOfViewers(oldNum, locationId){
     .then(function(result){
         var message = "added 1 to number of viewers";
         console.log(message);
-        res.send(message);
     })
     .catch(function(err){
         console.log(err);
-        res.send(err);
     })
 }
 
