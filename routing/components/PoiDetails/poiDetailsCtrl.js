@@ -41,14 +41,18 @@ angular.module('myApp')
                 self.poi = responce.data
                 self.createMap()
                 if (self.poi.reviews.length > 2) {
-                    self.poi.reviews.splice(2, self.poi.reviews.length - 2)
+                    let allReviews = self.poi.reviews
+                    let reviewSortDate = allReviews.sort((a, b) => new Date(a.reviewDate).getTime() - new Date(b.reviewDate).getTime());
+                    let only2reviews = []
+                    only2reviews.push(reviewSortDate[reviewSortDate.length-2])
+                    only2reviews.push(reviewSortDate[reviewSortDate.length-1])
+                    self.poi.reviews = only2reviews
                 }
                 }, function (responce) {
                 console.log(responce)         
             })
             if ($scope.appCtrl.username.localeCompare('guest') != 0)
                 self.connected = true
-
         }
 
         self.addRemoveFavorit = function (poiId) {

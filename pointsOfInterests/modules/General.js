@@ -99,29 +99,21 @@ router.get('/randomPopularLocations', function(req, res){
 
         res.send(ans);
     })
-
     .catch(function(err){
-<<<<<<< HEAD
         res.json({success: false})
-=======
         console.log(err);
         res.send({
             seccuss: false,
             error: err
         });
->>>>>>> 466331f8bc8390cc4286b2e02dfd64aea37d4173
     })
-
 })
 
 //get information for specific location
 router.get('/locationInfo/:locationId', function(req, res){
-<<<<<<< HEAD
     var locationId = req.params.locationId
     //var locationId = req.headers.locationid;
-=======
     var locationId = req.params.locationId;
->>>>>>> 466331f8bc8390cc4286b2e02dfd64aea37d4173
     var location;
 
     DButilsAzure.execQuery("SELECT * FROM Locations WHERE id='" + locationId + "'")
@@ -140,15 +132,12 @@ router.get('/locationInfo/:locationId', function(req, res){
         )
     })     
     .catch(function(err){
-<<<<<<< HEAD
         res.json({success: false})
-=======
         console.log(err);
         res.send({
             seccuss: false,
             error: err
         });
->>>>>>> 466331f8bc8390cc4286b2e02dfd64aea37d4173
     })
 
 })
@@ -199,5 +188,4 @@ function updateNumOfViewers(oldNum, locationId){
         })
     }
 
-
-module.exports = router;
+    module.exports = router;

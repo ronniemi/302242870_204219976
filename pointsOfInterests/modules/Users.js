@@ -77,18 +77,14 @@ router.post('/register', function(req,res){
         res.send(ans)
     })
     .catch(function(err){
-<<<<<<< HEAD
+
         res.json({success: false})
     });
-=======
         console.log(err);
         res.send({
             seccuss: false,
             error: err
         });
-    })
->>>>>>> 466331f8bc8390cc4286b2e02dfd64aea37d4173
-
     })
 });
 
@@ -140,15 +136,10 @@ function createRandomUsername() {
         }                 
     })
     .catch(function(err){
-<<<<<<< HEAD
         res.json({success: false})
-=======
         console.log(err);
         res.send(err);
->>>>>>> 466331f8bc8390cc4286b2e02dfd64aea37d4173
-    })
-
-       
+    }) 
 }
 
 function createRandomPassword(){
@@ -161,6 +152,5 @@ function createRandomPassword(){
     return password;
 
 }
-
 
 module.exports = router;

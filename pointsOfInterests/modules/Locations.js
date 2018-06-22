@@ -33,15 +33,12 @@ router.get("/favoriteLocations", function(req, res){
     })
 
     .catch(function(err){
-<<<<<<< HEAD
         res.json({success: false})
-=======
         console.log(err);
         res.send({
             seccuss: false,
             error: err
         });
->>>>>>> 466331f8bc8390cc4286b2e02dfd64aea37d4173
     })
 })
 
@@ -104,15 +101,12 @@ router.get("/lastSavedLocations", function(req, res){
 
     })
     .catch(function(err){
-<<<<<<< HEAD
         res.json({success: false})
-=======
         console.log(err);
         res.send({
             seccuss: false,
             error: err
         });
->>>>>>> 466331f8bc8390cc4286b2e02dfd64aea37d4173
     })
 })
 
@@ -166,15 +160,12 @@ router.put("/updateFavoriteList", function(req,res){
         })
     })
     .catch(function(err){
-<<<<<<< HEAD
         res.json({success: false})
-=======
         console.log(err);
         res.send({
             seccuss: false,
             error: err
         });
->>>>>>> 466331f8bc8390cc4286b2e02dfd64aea37d4173
     })
 })
 
@@ -190,15 +181,12 @@ router.post("/addReview", function(req,res){
         res.json({success:true})
     })
     .catch(function(err){
-<<<<<<< HEAD
         res.json({success:false})
-=======
         console.log(err);
         res.send({
             seccuss: false,
             error: err
         });
->>>>>>> 466331f8bc8390cc4286b2e02dfd64aea37d4173
     })
 })
 
@@ -253,15 +241,12 @@ function updateLocationRate(locationId, newRate, newRateCounter){
         return "location updated seccessfully";
     })
     .catch(function(err){
-<<<<<<< HEAD
         res.json({success: false})
-=======
         console.log(err);
         res.send({
             seccuss: false,
             error: err
         });
->>>>>>> 466331f8bc8390cc4286b2e02dfd64aea37d4173
     })
 
 
@@ -281,15 +266,12 @@ function addLocationsInNewOrder(newOrder){
         console.log("order changed");
     })
     .catch(function(err){
-<<<<<<< HEAD
         res.json({success: false})
-=======
         console.log(err);
         res.send({
             seccuss: false,
             error: err
         });
->>>>>>> 466331f8bc8390cc4286b2e02dfd64aea37d4173
     })
 
 }
@@ -321,12 +303,9 @@ function getMostPopularLocationInCategory(category){
         return popularLocation;
     })
     .catch(function(err){
-<<<<<<< HEAD
         res.json({success: false})
-=======
         console.log(err);
         res.send(err);
->>>>>>> 466331f8bc8390cc4286b2e02dfd64aea37d4173
     })
 
 }
@@ -349,7 +328,5 @@ function contains(array, id){
     }
     return false;
 }
-
-
 
 module.exports = router;
