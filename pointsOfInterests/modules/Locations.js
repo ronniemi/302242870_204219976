@@ -33,7 +33,6 @@ router.get("/favoriteLocations", function(req, res){
     })
 
     .catch(function(err){
-        res.json({success: false})
         console.log(err);
         res.send({
             seccuss: false,
@@ -69,10 +68,7 @@ router.get("/mostPopularLocationsForUser", function(req, res){
         //return 2 locations for categories
         Promise.all([findFirstPopularLocation, findSecondPopularLocation])
         .then(function(values){
-            // console.log(values);
-
-        res.send([values[0], values[1]]);
-        
+            res.send([values[0], values[1]]);
         })
     })
     .catch(function(err){
@@ -82,7 +78,6 @@ router.get("/mostPopularLocationsForUser", function(req, res){
             error: err
         });
     })
-
 })
 
 //get last 2 saved locations for user
@@ -101,7 +96,6 @@ router.get("/lastSavedLocations", function(req, res){
 
     })
     .catch(function(err){
-        res.json({success: false})
         console.log(err);
         res.send({
             seccuss: false,
@@ -153,14 +147,13 @@ router.put("/updateFavoriteList", function(req,res){
 
         Promise.all(promises)
         .then(function(values){
-            res.send({success: "true"});
+            res.json({success: "true"});
         })
         .catch(function(err){
             res.json({success: false})
         })
     })
     .catch(function(err){
-        res.json({success: false})
         console.log(err);
         res.send({
             seccuss: false,
@@ -181,7 +174,6 @@ router.post("/addReview", function(req,res){
         res.json({success:true})
     })
     .catch(function(err){
-        res.json({success:false})
         console.log(err);
         res.send({
             seccuss: false,
@@ -241,15 +233,12 @@ function updateLocationRate(locationId, newRate, newRateCounter){
         return "location updated seccessfully";
     })
     .catch(function(err){
-        res.json({success: false})
         console.log(err);
         res.send({
             seccuss: false,
             error: err
         });
     })
-
-
 }
 
 
@@ -266,14 +255,8 @@ function addLocationsInNewOrder(newOrder){
         console.log("order changed");
     })
     .catch(function(err){
-        res.json({success: false})
         console.log(err);
-        res.send({
-            seccuss: false,
-            error: err
-        });
     })
-
 }
 
 function getLatestDate(data) {
@@ -303,11 +286,8 @@ function getMostPopularLocationInCategory(category){
         return popularLocation;
     })
     .catch(function(err){
-        res.json({success: false})
         console.log(err);
-        res.send(err);
     })
-
 }
 
 

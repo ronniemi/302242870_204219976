@@ -30,8 +30,8 @@ router.get("/allCountries", function(req, res){
     var parser = new xml2js.Parser();
     fs.readFile('countries.xml', function(err, data) {
         parser.parseString(data, function (err, result) {
-            res.send(result);
             console.log('Sent all countries');
+            res.send(result);
         });
     });
 });
@@ -85,7 +85,6 @@ router.get('/randomPopularLocations', function(req, res){
             location: locations[1],
             reviews: result
         })
-        //console.log(ans);
 
         //find revies for third location
         return getLastReviewsForLocation(locations[2].id)       
@@ -95,12 +94,10 @@ router.get('/randomPopularLocations', function(req, res){
             location: locations[2],
             reviews: result
         })
-       // console.log(ans);
 
         res.send(ans);
     })
     .catch(function(err){
-        res.json({success: false})
         console.log(err);
         res.send({
             seccuss: false,
@@ -111,7 +108,6 @@ router.get('/randomPopularLocations', function(req, res){
 
 //get information for specific location
 router.get('/locationInfo/:locationId', function(req, res){
-    var locationId = req.params.locationId
     //var locationId = req.headers.locationid;
     var locationId = req.params.locationId;
     var location;
@@ -132,7 +128,6 @@ router.get('/locationInfo/:locationId', function(req, res){
         )
     })     
     .catch(function(err){
-        res.json({success: false})
         console.log(err);
         res.send({
             seccuss: false,

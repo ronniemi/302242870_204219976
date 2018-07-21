@@ -40,10 +40,6 @@ app.use('/reg', function(req, res, next){
     }
 });
 
-app.use('/reg/admin', function(req, res, next){
-    var isAdmin = req.decode.payload.admin;
-})
-
 app.use('/users', users);
 app.use('/reg/locations', locations);
 app.use('/general', general)

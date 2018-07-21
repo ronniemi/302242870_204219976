@@ -68,22 +68,16 @@ router.post('/register', function(req,res){
         + req.body.verificationQues1 +  "', '" + req.body.verificationQues2 + "', '"
         + req.body.verificationAns1 + "', '" + req.body.verificationAns2 + "', '" + 0 + "')"
         console.log(query)
-    DButilsAzure.execQuery(query)
-    .then(function(result){
-        var ans = {
-            username: username,
-            password: password
-        }
-        res.send(ans)
-    })
-    .catch(function(err){
-
-        res.json({success: false})
-    });
-        console.log(err);
-        res.send({
-            seccuss: false,
-            error: err
+        DButilsAzure.execQuery(query)
+        .then(function(result){
+            var ans = {
+                username: username,
+                password: password
+            }
+            res.send(ans)
+        })
+        .catch(function(err){
+            res.json({success: false})
         });
     })
 });
@@ -136,9 +130,7 @@ function createRandomUsername() {
         }                 
     })
     .catch(function(err){
-        res.json({success: false})
         console.log(err);
-        res.send(err);
     }) 
 }
 
@@ -150,7 +142,6 @@ function createRandomPassword(){
         password += possible.charAt(Math.floor(Math.random() * possible.length));
   
     return password;
-
 }
 
 module.exports = router;
